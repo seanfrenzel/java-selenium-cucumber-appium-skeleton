@@ -1,0 +1,29 @@
+{
+  "user1": {
+    "username": "usernameHere",
+    "password": "passwordHere",
+    "placeholderForOtherData": "placeholder",
+    "placeholderForListData": [
+      "placeholder",
+      "placeholder"
+    ],
+    "placeholderForChildClassData": {
+      "childClassDataEX": "placeholder",
+      "childClassDataEX2": "placeholder"
+    }
+  },
+
+  "user2": {
+    "username": "usernameHere",
+    "password": "passwordHere",
+    "placeholderForOtherData": "placeholder",
+    "placeholderForListData": [
+      "placeholder",
+      "placeholder"
+    ],
+    "placeholderForChildClassData": {
+      "childClassDataEX": "placeholder",
+      "childClassDataEX2": "placeholder"
+    }
+  }
+}
