@@ -15,7 +15,7 @@ import java.time.Duration;
 
 public class PageObjectBase {
   private RemoteWebDriver driver;
-  
+
   public PageObjectBase() {
     this.driver = Hooks.getDriver();
     AppiumFieldDecorator decorator = new AppiumFieldDecorator(driver, Duration.ofSeconds(5));
