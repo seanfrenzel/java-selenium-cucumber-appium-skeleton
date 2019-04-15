@@ -2,16 +2,20 @@ package cucumber.steps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import selenium.pages.ExamplePage;
-import selenium.utilities.setup.Hooks;
+import selenium.pages.ExamplePageWeb;
+import selenium.utilities.setup.Config;
 
 public class ExampleSteps {
 
-  private final ExamplePage page;
+  private final ExamplePageWeb page;
 
-  public ExampleSteps(ExamplePage page) {
-    new Hooks();
-    this.page = page;
+  public ExampleSteps(Config config) {
+    ExamplePageWeb platformPage = null;
+    if (config.isAndroid()) platformPage = new ExamplePageWeb();
+    if (config.isIos()) platformPage = new ExamplePageWeb();
+    if (config.isWeb()) platformPage = new ExamplePageWeb();
+
+    this.page = platformPage;
   }
 
   @Given("the user navigates to the site")

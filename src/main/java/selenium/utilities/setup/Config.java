@@ -29,15 +29,18 @@ public class Config {
 
   public Config() {
     Logger.getLogger("org.openqa.selenium.remote").setLevel(Level.OFF);
-    
     setPlatform(getProperty("platform", "web"));
     setCapabilitesForPlatform(getPlatform());
   }
 
+  private boolean isAndroid;
+  private boolean isIos;
+  private boolean isWeb;
+
   private void setCapabilitesForPlatform(String platform) {
-    boolean isAndroid = platform.equalsIgnoreCase("Android");
-    boolean isIos = platform.equalsIgnoreCase("iOS");
-    boolean isWeb = platform.equalsIgnoreCase("Web");
+    isAndroid = platform.equalsIgnoreCase("Android");
+    isIos = platform.equalsIgnoreCase("iOS");
+    isWeb = platform.equalsIgnoreCase("Web");
 
     if (isAndroid) setAndroidCapabilites();
     if (isIos) setIosCapabilities();
@@ -98,6 +101,18 @@ public class Config {
 
   public void setCapabilities(Map<String, Object> capabilities) {
     this.capabilities = capabilities;
+  }
+
+  public boolean isAndroid() {
+    return isAndroid;
+  }
+
+  public boolean isIos() {
+    return isIos;
+  }
+
+  public boolean isWeb() {
+    return isWeb;
   }
   // @formatter:on
 }

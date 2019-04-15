@@ -7,7 +7,7 @@ import selenium.base.PageObjectBase;
 
 import java.util.List;
 
-public class ExamplePage extends PageObjectBase {
+public class ExamplePageWeb extends PageObjectBase {
 
   @FindBy(css = "div.logo")
   private WebElement logo;
@@ -24,7 +24,7 @@ public class ExamplePage extends PageObjectBase {
   @FindBy(className = "grid-gfy-item")
   List<WebElement> gifs;
 
-  public ExamplePage() {
+  public ExamplePageWeb() {
     super();
   }
 

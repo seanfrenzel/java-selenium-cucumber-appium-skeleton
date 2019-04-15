@@ -14,10 +14,10 @@ import java.lang.reflect.Field;
 import java.time.Duration;
 
 public class PageObjectBase {
-  RemoteWebDriver driver;
-
+  private RemoteWebDriver driver;
+  
   public PageObjectBase() {
-    driver = Hooks.getDriver();
+    this.driver = Hooks.getDriver();
     AppiumFieldDecorator decorator = new AppiumFieldDecorator(driver, Duration.ofSeconds(5));
     PageFactory.initElements(decorator, this);
   }

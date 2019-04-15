@@ -31,7 +31,6 @@ public class Hooks {
 
   @Before(order = 1)
   public void beforeAll() throws MalformedURLException {
-
     if (!setup) {
       factory = new DriverFactory(Config.URL, config.getCapabilities());
       setup = true;
@@ -43,18 +42,32 @@ public class Hooks {
     user.setUserData(Config.USER);
     setDriver(factory.createDriver());
     driver.get(Config.ENVIRONMENT);
+
+    if (!driver.getCurrentUrl().equals(Config.ENVIRONMENT)) {
+      driver.navigate().to(Config.ENVIRONMENT);
+    }
+  }
+
+  @After(order = 1)
+  public void afterAll() {
+    setup = false;
   }
 
   @After
   public void afterScenario(Scenario scenario) {
-    if (getDriver() != null && scenario.isFailed()) {
+    boolean driverNotNull = driver != null;
+    if (driverNotNull && scenario.isFailed()) {
       try {
-        byte[] screenshot = getDriver().getScreenshotAs(OutputType.BYTES);
+        byte[] screenshot = driver.getScreenshotAs(OutputType.BYTES);
         scenario.embed(screenshot, "image/png");
       } catch (WebDriverException webdriverException) {
         webdriverException.printStackTrace();
       }
     }
-    if (getDriver() != null) getDriver().quit();
+
+    if (driverNotNull) {
+      driver.close();
+      driver.quit();
+    }
   }
 }
