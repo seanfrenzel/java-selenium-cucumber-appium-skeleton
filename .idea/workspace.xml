@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9ec5423-856a-43bf-a82e-8a8aa3604dbb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/888256d561e8c321ea35978933427f94a55bf40d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/888256d561e8c321ea35978933427f94a55bf40d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/selenium/utilities/setup/Config$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/selenium/utilities/setup/Config$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/selenium/utilities/setup/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/selenium/utilities/setup/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/resources/features/Example.feature" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/resources/features/Example.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/selenium/utilities/setup/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/selenium/utilities/setup/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Example.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Example.feature" afterDir="false" />
-    </list>
+    <list default="true" id="d9ec5423-856a-43bf-a82e-8a8aa3604dbb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -90,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/selenium/utilities/setup/Hooks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+            <state relative-caret-position="310">
+              <caret line="53" column="55" lean-forward="true" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
               <folding>
                 <element signature="e#555#556#0" expanded="true" />
                 <element signature="e#582#583#0" expanded="true" />
@@ -229,12 +220,12 @@
         <option value="$PROJECT_DIR$/src/main/java/project/pages/abstracts/ExamplePage.java" />
         <option value="$PROJECT_DIR$/src/main/java/project/utilities/setup/Hooks.java" />
         <option value="$PROJECT_DIR$/src/test/java/cucumber/steps/ExampleSteps.java" />
-        <option value="$PROJECT_DIR$/src/main/java/selenium/utilities/setup/Hooks.java" />
         <option value="$PROJECT_DIR$/src/main/java/selenium/utilities/setup/Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/selenium/pages/web/ExamplePageElements.java" />
         <option value="$PROJECT_DIR$/src/main/java/selenium/pages/ExamplePageElements.java" />
         <option value="$PROJECT_DIR$/src/main/java/selenium/pages/ExamplePage.java" />
         <option value="$PROJECT_DIR$/src/test/resources/features/Example.feature" />
+        <option value="$PROJECT_DIR$/src/main/java/selenium/utilities/setup/Hooks.java" />
       </list>
     </option>
   </component>
@@ -848,8 +839,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/selenium/utilities/setup/Hooks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+        <state relative-caret-position="310">
+          <caret line="53" column="55" lean-forward="true" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
           <folding>
             <element signature="e#555#556#0" expanded="true" />
             <element signature="e#582#583#0" expanded="true" />
