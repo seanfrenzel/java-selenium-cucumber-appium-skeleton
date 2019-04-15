@@ -29,6 +29,7 @@ public class Config {
 
   public Config() {
     Logger.getLogger("org.openqa.selenium.remote").setLevel(Level.OFF);
+    
     setPlatform(getProperty("platform", "web"));
     setCapabilitesForPlatform(getPlatform());
   }

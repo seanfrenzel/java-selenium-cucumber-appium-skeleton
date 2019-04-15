@@ -21,3 +21,5 @@ U
 %src/main/java/selenium/data/User.java,0/5/05332f0e0d2155c277c3433a483a2e5a10934974
 b
 2src/main/java/selenium/utilities/setup/Config.java,8/8/888256d561e8c321ea35978933427f94a55bf40d
+]
+-src/main/java/selenium/pages/ExamplePage.java,a/9/a9da671f2efbe70de097815b67caf825129cee74
