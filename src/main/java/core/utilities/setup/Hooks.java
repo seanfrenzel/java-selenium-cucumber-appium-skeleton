@@ -41,11 +41,8 @@ public class Hooks {
   public void beforeScenario() {
     user.setUserData(Config.USER);
     setDriver(factory.createDriver());
-    driver.get(Config.ENVIRONMENT);
 
-    if (!driver.getCurrentUrl().equals(Config.ENVIRONMENT)) {
-      driver.navigate().to(Config.ENVIRONMENT);
-    }
+    if (config.isWeb()) driver.get(Config.ENVIRONMENT);
   }
 
   @After(order = 1)
@@ -56,18 +53,19 @@ public class Hooks {
   @After
   public void afterScenario(Scenario scenario) {
     boolean driverNotNull = driver != null;
-    if (driverNotNull && scenario.isFailed()) {
-      try {
-        byte[] screenshot = driver.getScreenshotAs(OutputType.BYTES);
-        scenario.embed(screenshot, "image/png");
-      } catch (WebDriverException webdriverException) {
-        webdriverException.printStackTrace();
-      }
-    }
-
+    if (driverNotNull && scenario.isFailed()) takeScreenshot(scenario);
     if (driverNotNull) {
       driver.close();
       driver.quit();
+    }
+  }
+
+  private void takeScreenshot(Scenario scenario) {
+    try {
+      byte[] screenshot = driver.getScreenshotAs(OutputType.BYTES);
+      scenario.embed(screenshot, "image/png");
+    } catch (WebDriverException webdriverException) {
+      webdriverException.printStackTrace();
     }
   }
 }
