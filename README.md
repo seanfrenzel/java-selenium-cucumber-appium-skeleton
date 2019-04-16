@@ -185,7 +185,7 @@ Note: *iOS sim must have `connect hardware keyboard` off.*
     - We use the set _** capabilities**_ to _**create the driver**_ here
         - `createDriver()` will create the driver for the current platform     
      
-- **Hooks:** (_`src/test/java/cucumber/support/Hooks.java`_)
+- **Hooks:** (_`core/utilities/setup/Hooks.java`_)
     - We use the _**created driver**_ from _**DriverFactory**_ to set the _**RemoteWebdriver**_ and perform actions based on test conditions. 
         - `beforeAll()` sets data, drivers, and variables for test run.
         - `beforeScenariol()` will set the driver from what was created in Factory. If that fails it will try again 5 times and until failing the run. 
@@ -197,7 +197,7 @@ Note: *iOS sim must have `connect hardware keyboard` off.*
     - This houses general use methods. The constructor sets the driver variable so this class can be used as a super. 
     - `getField(elementField)` Is how we use string parameters in gherkin steps to use elements on pages/modules
     
-- **Pages Abstract Classes** (_`src/main/java/cucumber/utility/Utility.java`_)
+- **Pages Abstract Classes**
     - We use abstract classes to perform different logic on each platform when needed. 
     - There is an Abstract Class for each screen/page used. Methods used for both platform are stored in the abstract classes, then overridden on the platforms class.
     - The step classes choose which class to use based off the set platform
