@@ -1,12 +1,12 @@
-package selenium.utilities.setup;
+package core.utilities.setup;
 
+import core.data.User;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import selenium.data.User;
 
 import java.net.MalformedURLException;
 

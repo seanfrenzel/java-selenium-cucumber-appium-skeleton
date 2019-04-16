@@ -1,4 +1,4 @@
-package selenium.data;
+package core.data;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

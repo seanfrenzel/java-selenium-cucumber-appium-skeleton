@@ -1,12 +1,12 @@
 package cucumber.steps;
 
+import core.pages.examplePage.ExamplePage;
+import core.pages.examplePage.ExamplePageAndroid;
+import core.pages.examplePage.ExamplePageWeb;
+import core.pages.examplePage.ExamplePageiOS;
+import core.utilities.setup.Config;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import selenium.pages.examplePage.ExamplePage;
-import selenium.pages.examplePage.ExamplePageAndroid;
-import selenium.pages.examplePage.ExamplePageWeb;
-import selenium.pages.examplePage.ExamplePageiOS;
-import selenium.utilities.setup.Config;
 
 public class ExampleSteps {
 

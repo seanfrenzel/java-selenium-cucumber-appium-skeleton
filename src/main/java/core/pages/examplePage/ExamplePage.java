@@ -1,6 +1,6 @@
-package selenium.pages.examplePage;
+package core.pages.examplePage;
 
-import selenium.base.PageObjectBase;
+import core.base.PageObjectBase;
 
 public abstract class ExamplePage extends PageObjectBase {
   public abstract void assertPagePresent();

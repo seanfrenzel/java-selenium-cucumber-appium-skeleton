@@ -1,5 +1,7 @@
-package selenium.base;
+package core.base;
 
+import core.utilities.Tools;
+import core.utilities.setup.Hooks;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,8 +9,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import selenium.utilities.Tools;
-import selenium.utilities.setup.Hooks;
 
 import java.lang.reflect.Field;
 import java.time.Duration;

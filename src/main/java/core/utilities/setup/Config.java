@@ -1,4 +1,4 @@
-package selenium.utilities.setup;
+package core.utilities.setup;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -28,7 +28,7 @@ public class Config {
   private Map<String, Object> capabilities;
 
   public Config() {
-    Logger.getLogger("org.openqa.selenium.remote").setLevel(Level.OFF);
+    Logger.getLogger("org.openqa.core.remote").setLevel(Level.OFF);
     setPlatform(getProperty("platform", "web"));
     setCapabilitesForPlatform(getPlatform());
   }

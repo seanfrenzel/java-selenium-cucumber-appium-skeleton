@@ -1,28 +1,28 @@
-package selenium.pages.examplePage;
+package core.pages.examplePage;
 
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.ios.IOSElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class ExamplePageWeb extends ExamplePage {
+public class ExamplePageiOS extends ExamplePage {
 
   @FindBy(css = "div.logo")
-  private WebElement logo;
+  private IOSElement logo;
 
   @FindBy(css = "div.search-input-wrapper > input")
-  private WebElement searchInput;
+  private IOSElement searchInput;
 
   @FindBy(css = "div.video-player-container.player-container")
-  private WebElement neatGif;
+  private IOSElement neatGif;
 
   @FindBy(css = "button.search-button")
-  private WebElement search;
+  private IOSElement search;
 
   @FindBy(className = "grid-gfy-item")
-  private List<WebElement> gifs;
+  private List<IOSElement> gifs;
 
-  public ExamplePageWeb() {
+  public ExamplePageiOS() {
     super();
   }
 

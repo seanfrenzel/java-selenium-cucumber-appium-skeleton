@@ -1,4 +1,4 @@
-package selenium.utilities;
+package core.utilities;
 
 import io.appium.java_client.MobileElement;
 import io.cucumber.datatable.DataTable;
