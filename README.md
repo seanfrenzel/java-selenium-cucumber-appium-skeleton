@@ -140,7 +140,7 @@ Running tests
 Create a run configuration. This will allow you to run Scenarios by right clicking them and selecting run in IntelliJ   
 - Create new Cucumber Java run configuration: `Run` > `Edit Configurations`
     - Main class: `cucumber.api.cli.Main`
-    - Glue: `cucumber.steps cucumber.support`
+    - Glue: `core.utilities.setup cucumber.steps`
     - Feature or folder path: `/path/to/features` 
         - Example `/Users/your_username/project_name/src/test/resources/features`
 
