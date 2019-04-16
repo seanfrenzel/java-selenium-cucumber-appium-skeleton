@@ -36,11 +36,13 @@ public class Config {
   private boolean isAndroid;
   private boolean isIos;
   private boolean isWeb;
+  private boolean isMobile;
 
   private void setCapabilitesForPlatform(String platform) {
     isAndroid = platform.equalsIgnoreCase("Android");
     isIos = platform.equalsIgnoreCase("iOS");
     isWeb = platform.equalsIgnoreCase("Web");
+    if (isAndroid || isIos) isMobile = true;
 
     if (isAndroid) setAndroidCapabilites();
     if (isIos) setIosCapabilities();
@@ -50,7 +52,7 @@ public class Config {
   private void setIosCapabilities() {
     setDeviceName(getProperty("deviceName", "iPhone x"));
     setCapabilities(getDeviceCapabilities(getDeviceName()));
-  
+
     capabilities.put("platformName", "iOS");
     capabilities.put("automationName", "XCUITest");
     capabilities.put("xcodeOrgId", getProperty("xcodeOrgId", "ID_HERE"));
@@ -115,6 +117,10 @@ public class Config {
 
   public boolean isWeb() {
     return isWeb;
+  }
+
+  public boolean isMobile() {
+    return isMobile;
   }
   // @formatter:on
 }
