@@ -25,7 +25,7 @@ Ensure the _`Xcode command line tools`_ are installed during the process
 
 **Install** [Android SDK](https://developer.android.com/studio/#downloads)
 \
-`Create new Android Studio Project` with `default settings` from `API 23` and `No Activity`. Continue to import and install any settings suggested by the SDK. 
+`Create new Android Studio Project` with `default settings` from `API 23(Or Desired API)` and `No Activity`. Continue to import and install any settings suggested by the SDK. 
 
 **Install** [IntelliJ](https://www.jetbrains.com/idea/download):
 \
