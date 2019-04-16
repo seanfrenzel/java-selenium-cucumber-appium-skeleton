@@ -53,6 +53,7 @@ public class Config {
     setDeviceName(getProperty("deviceName", "iPhone x"));
     setCapabilities(getDeviceCapabilities(getDeviceName()));
 
+    capabilities.put("app", "pathToAppHere");
     capabilities.put("platformName", "iOS");
     capabilities.put("automationName", "XCUITest");
     capabilities.put("xcodeOrgId", getProperty("xcodeOrgId", "ID_HERE"));
@@ -63,6 +64,7 @@ public class Config {
     setDeviceName(getProperty("deviceName", "emulator-5554"));
     setCapabilities(getDeviceCapabilities(getDeviceName()));
 
+    capabilities.put("app", "pathToAppHere");
     capabilities.put("platformName", "Android");
     capabilities.put("automationName", "UiAutomator2");
     capabilities.put("systemPort", parseInt(getProperty("systemPort", "8200")));
