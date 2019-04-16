@@ -201,4 +201,4 @@ Note: *iOS sim must have `connect hardware keyboard` off.*
     - We use abstract classes to perform different logic on each platform when needed. 
     - There is an Abstract Class for each screen/page used. Methods used for both platform are stored in the abstract classes, then overridden on the platforms class.
     - The step classes choose which class to use based off the set platform
-        - Example: The Abstract `ExampleScreen` has abstract method`assertPagePresent()` which is overridden in `ExamplePageWeb` for that platforms needed functionality. 
+        - Example: The Abstract `ExamplePage` has abstract method`assertPagePresent()` which is overridden in `ExamplePageWeb` for that platforms needed functionality. 
