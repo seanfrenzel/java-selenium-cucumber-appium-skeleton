@@ -1,6 +1,6 @@
 Java-Cucumber
 ======
-Test automation template for java-cucumber
+Test automation skeleton for java-cucumber
 
 Resources
 ---
@@ -39,7 +39,7 @@ This is what we will use to inspect the devices.
 Environment variables
 ---
 
-**Mac OSX**
+#### Mac OSX:
 **1.** Open a terminal and proceed with the following:
 `$ open ~/.bash_profile
 `\
@@ -62,7 +62,7 @@ export PATH=${PATH}:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/pla
 - **ios-deploy - iOS**:`$ npm install -g ios-deploy`
     - ios-deploy should be global.
     
-**Windows** 
+#### Windows OS:
 TO DO
     
 Usage:
