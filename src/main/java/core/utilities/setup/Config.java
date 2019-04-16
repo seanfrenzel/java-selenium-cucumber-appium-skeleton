@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -53,7 +54,7 @@ public class Config {
     setDeviceName(getProperty("deviceName", "iPhone x"));
     setCapabilities(getDeviceCapabilities(getDeviceName()));
 
-    capabilities.put("app", "pathToAppHere");
+    capabilities.put("app", Paths.get(WORKSPACE, "apps", "appHere").toString());
     capabilities.put("platformName", "iOS");
     capabilities.put("automationName", "XCUITest");
     capabilities.put("xcodeOrgId", getProperty("xcodeOrgId", "ID_HERE"));
@@ -64,7 +65,7 @@ public class Config {
     setDeviceName(getProperty("deviceName", "emulator-5554"));
     setCapabilities(getDeviceCapabilities(getDeviceName()));
 
-    capabilities.put("app", "pathToAppHere");
+    capabilities.put("app", Paths.get(WORKSPACE, "apps", "appHere").toString());
     capabilities.put("platformName", "Android");
     capabilities.put("automationName", "UiAutomator2");
     capabilities.put("systemPort", parseInt(getProperty("systemPort", "8200")));

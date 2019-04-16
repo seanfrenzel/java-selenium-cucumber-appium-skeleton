@@ -49,8 +49,8 @@ public class Hooks {
   public void afterAll() {
     setup = false;
   }
-
-  @After
+  
+  @After(order = 2)
   public void afterScenario(Scenario scenario) {
     boolean driverNotNull = driver != null;
     if (driverNotNull && scenario.isFailed()) takeScreenshot(scenario);
