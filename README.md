@@ -63,7 +63,39 @@ export PATH=${PATH}:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/pla
     - ios-deploy should be global.
     
 #### Windows OS:
-TO DO
+NOTE: Unable to run iOS on windows\
+**We will use npm to install needed packages:**
+[install _current_ Node.js](https://nodejs.org/en/)
+
+**Input command lines into powershell**\
+_restart pc if npm is not found_
+* `npm install npm@latest -g`
+* `npm i appium`
+* `npm install selenium-standalone@latest -g`
+* `selenium-standalone install`
+
+**Set windows variables:**
+1. open _powershell as admin_ > enter `rundll32 sysdm.cpl,EditEnvironmentVariables` to open windows variables
+2. set the following for `SYSTEM VARIABLES`
+```
+Variable name -> JAVA_HOME
+Variable path -> path\to\javaSDK
+```
+* set the following for `USER VARIABLES`
+```
+Variable name -> ANDROID_HOME
+Variable path -> path\to\androidSDK
+```
+3. Select `Path` in `SYSTEM Variables` and click `Edit` then click `New` and enter the following for the variables created:
+ ```
+%JAVA_HOME%\bin
+```
+4. Select `Path` in `USER Variables` and click `Edit` then click `New` and enter the following for the variables created:
+ ```
+%ANDROID_HOME%\emulator
+%ANDROID_HOME%\tools
+%ANDROID_HOME%\platform-tools
+```
     
 Usage:
 ---

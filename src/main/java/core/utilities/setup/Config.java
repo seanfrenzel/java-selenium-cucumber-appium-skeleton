@@ -34,9 +34,9 @@ public class Config {
   private boolean isMobile;
 
   public Config() {
-    // set platform property to -> Android, iOS, or Web
     Logger.getLogger("org.openqa.core.remote").setLevel(Level.OFF);
-    platform = getProperty("platform", "android");
+    // set platform property to -> Android, iOS, or Web
+    platform = getProperty("platform", "web");
     setCapabilitiesForPlatform(platform);
   }
 
