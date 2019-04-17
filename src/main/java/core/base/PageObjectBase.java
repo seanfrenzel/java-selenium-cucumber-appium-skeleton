@@ -80,16 +80,6 @@ public class PageObjectBase {
                     String.format("Element Target Text was not found: [%s]", text)));
   }
 
-  public WebElement getTargetElementMobile(List<WebElement> elements, String text) {
-    return elements.stream()
-        .filter(elem -> elem.getText().equalsIgnoreCase(text))
-        .findFirst()
-        .orElseThrow(
-            () ->
-                new NoSuchElementException(
-                    String.format("Element Target Text was not found: [%s]", text)));
-  }
-
   /** Assert Methods */
   public void assertDisplayed(WebElement element) {
     try {
@@ -226,7 +216,7 @@ public class PageObjectBase {
 
     while (!isDisplayed && count++ < 10) {
       try {
-        isDisplayed = getTargetElementMobile(elements, text).isDisplayed();
+        isDisplayed = getTargetElement(elements, text).isDisplayed();
       } catch (Exception e) {
         androidScroll(direction);
       }
@@ -265,7 +255,7 @@ public class PageObjectBase {
         throw new IllegalArgumentException(
             "Incorrect scroll direction given: Direction must be [up], [down], [left], or [right]");
     }
-    
+
     new TouchAction((MobileDriver) driver)
         .longPress(longPressOptions().withPosition(point(map.get("fromX"), map.get("fromY"))))
         .moveTo(point(map.get("toX"), map.get("toY")))
