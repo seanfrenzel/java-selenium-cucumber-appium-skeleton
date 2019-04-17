@@ -66,7 +66,7 @@ public class PageObjectBase {
     return (WebElement) getField(elementField);
   }
 
-  public List<WebElement> getElementsWeb(String elementsField) {
+  public List<WebElement> getElements(String elementsField) {
     return (List<WebElement>) getField(elementsField);
   }
 
