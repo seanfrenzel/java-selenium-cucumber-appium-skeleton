@@ -25,14 +25,14 @@ public class Hooks {
     return driver;
   }
 
-  public static void setDriver(RemoteWebDriver driver) {
+  private static void setDriver(RemoteWebDriver driver) {
     Hooks.driver = driver;
   }
 
   @Before(order = 1)
   public void beforeAll() throws MalformedURLException {
     if (!setup) {
-      factory = new DriverFactory(Config.URL, config.getCapabilities());
+      factory = new DriverFactory(config.getUrl(), config.getCapabilities());
       setup = true;
     }
   }
@@ -49,15 +49,12 @@ public class Hooks {
   public void afterAll() {
     setup = false;
   }
-  
+
   @After(order = 2)
   public void afterScenario(Scenario scenario) {
     boolean driverNotNull = driver != null;
     if (driverNotNull && scenario.isFailed()) takeScreenshot(scenario);
-    if (driverNotNull) {
-      driver.close();
-      driver.quit();
-    }
+    if (driverNotNull) driver.quit();
   }
 
   private void takeScreenshot(Scenario scenario) {
@@ -65,7 +62,7 @@ public class Hooks {
       byte[] screenshot = driver.getScreenshotAs(OutputType.BYTES);
       scenario.embed(screenshot, "image/png");
     } catch (WebDriverException webdriverException) {
-      webdriverException.printStackTrace();
+      throw new WebDriverException("Failed to Take Screenshot after Scenario Failure");
     }
   }
 }

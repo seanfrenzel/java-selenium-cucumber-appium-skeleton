@@ -3,36 +3,21 @@ package core.pages.examplePage;
 import io.appium.java_client.ios.IOSElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 public class ExamplePageiOS extends ExamplePage {
 
-  @FindBy(css = "div.logo")
-  private IOSElement logo;
-
-  @FindBy(css = "div.search-input-wrapper > input")
-  private IOSElement searchInput;
-
-  @FindBy(css = "div.video-player-container.player-container")
-  private IOSElement neatGif;
-
-  @FindBy(css = "button.search-button")
-  private IOSElement search;
-
-  @FindBy(className = "grid-gfy-item")
-  private List<IOSElement> gifs;
+  @FindBy(css = "placeholder")
+  private IOSElement placeholder;
 
   public ExamplePageiOS() {
     super();
   }
 
   public void assertPagePresent() {
-    assertDisplayed(logo);
+    // placeholder, not implement
   }
 
   public void openNeatGif() {
-    searchInput.sendKeys("Neat");
-    search.click();
-    gifs.get(0).click();
+    // not used by example test
+    // NOTE: this is an example to keep it simple. Do not use the same page for different pages
   }
 }

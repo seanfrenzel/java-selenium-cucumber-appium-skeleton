@@ -3,36 +3,26 @@ package core.pages.examplePage;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 public class ExamplePageAndroid extends ExamplePage {
 
-  @FindBy(css = "div.logo")
-  private AndroidElement logo;
+  @FindBy(xpath = "//*[@text = 'SKIP']")
+  private AndroidElement skip;
 
-  @FindBy(css = "div.search-input-wrapper > input")
-  private AndroidElement searchInput;
-
-  @FindBy(css = "div.video-player-container.player-container")
-  private AndroidElement neatGif;
-
-  @FindBy(css = "button.search-button")
-  private AndroidElement search;
-
-  @FindBy(className = "grid-gfy-item")
-  private List<AndroidElement> gifs;
+  @FindBy(id = "com.google.android.apps.maps:id/mainmap_container")
+  private AndroidElement googleMap;
 
   public ExamplePageAndroid() {
     super();
   }
 
+  @Override
   public void assertPagePresent() {
-    assertDisplayed(logo);
+    assertDisplayed(skip);
   }
 
+  @Override
   public void openNeatGif() {
-    searchInput.sendKeys("Neat");
-    search.click();
-    gifs.get(0).click();
+    // not used by example test
+    // NOTE: this is an example to keep it simple. Do not use the same page for different pages
   }
 }

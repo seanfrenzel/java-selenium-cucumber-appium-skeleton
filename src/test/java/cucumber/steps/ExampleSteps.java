@@ -5,6 +5,7 @@ import core.pages.examplePage.ExamplePageAndroid;
 import core.pages.examplePage.ExamplePageWeb;
 import core.pages.examplePage.ExamplePageiOS;
 import core.utilities.setup.Config;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
@@ -18,7 +19,7 @@ public class ExampleSteps {
     if (config.isWeb()) page = new ExamplePageWeb();
   }
 
-  @Given("the user navigates to the site")
+  @Given("the user navigates to the website/app")
   public void theUserNavigatesToTheSite() {
     page.assertPagePresent();
   }
@@ -28,8 +29,13 @@ public class ExampleSteps {
     page.openNeatGif();
   }
 
-  @Then("verifies a neat {string} is shown")
-  public void verifiresANeatIsShown(String elementField) {
+  @Then("verifies {string} is displayed")
+  public void verifirezIsDisplayed(String elementField) {
     page.assertDisplayed(page.getElement(elementField));
+  }
+
+  @And("taps {string}")
+  public void taps(String elementField) {
+    page.tap(page.getElement(elementField));
   }
 }

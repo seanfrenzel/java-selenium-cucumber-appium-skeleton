@@ -18,10 +18,9 @@ public class DriverFactory {
   public DriverFactory(String url, Map<String, Object> map) throws MalformedURLException {
     this.url = new URL(url);
     this.capabilities = new DesiredCapabilities(map);
-    createDriver();
   }
 
-  public RemoteWebDriver createDriver() {
+  RemoteWebDriver createDriver() {
     String platform = config.getPlatform().toUpperCase();
 
     switch (platform) {

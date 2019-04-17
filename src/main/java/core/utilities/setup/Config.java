@@ -21,39 +21,41 @@ import static java.lang.System.getProperty;
 public class Config {
   public static final String WORKSPACE = getProperty("user.dir");
   public static final String ENVIRONMENT = getProperty("environment", "https://gfycat.com/");
-  public static final String URL = getProperty("seleniumGrid", "http://0.0.0.0:4444/wd/hub");
   public static final String USER = getProperty("user", "user1");
 
   private String platform;
   private String deviceName;
+  private String url;
   private Map<String, Object> capabilities;
-
-  public Config() {
-    Logger.getLogger("org.openqa.core.remote").setLevel(Level.OFF);
-    setPlatform(getProperty("platform", "web"));
-    setCapabilitesForPlatform(getPlatform());
-  }
 
   private boolean isAndroid;
   private boolean isIos;
   private boolean isWeb;
   private boolean isMobile;
 
-  private void setCapabilitesForPlatform(String platform) {
+  public Config() {
+    // set platform property to -> Android, iOS, or Web
+    Logger.getLogger("org.openqa.core.remote").setLevel(Level.OFF);
+    platform = getProperty("platform", "android");
+    setCapabilitiesForPlatform(platform);
+  }
+
+  private void setCapabilitiesForPlatform(String platform) {
     isAndroid = platform.equalsIgnoreCase("Android");
     isIos = platform.equalsIgnoreCase("iOS");
     isWeb = platform.equalsIgnoreCase("Web");
     if (isAndroid || isIos) isMobile = true;
 
-    if (isAndroid) setAndroidCapabilites();
+    if (isAndroid) setAndroidCapabilities();
     if (isIos) setIosCapabilities();
-    if (isWeb) setWebCapabilites();
+    if (isWeb) setWebCapabilities();
   }
 
   private void setIosCapabilities() {
-    setDeviceName(getProperty("deviceName", "iPhone x"));
-    setCapabilities(getDeviceCapabilities(getDeviceName()));
+    deviceName = getProperty("deviceName", "iPhone x");
+    url = getProperty("seleniumGrid", "http://0.0.0.0:4723/wd/hub");
 
+    capabilities = getDeviceCapabilities(deviceName);
     capabilities.put("app", Paths.get(WORKSPACE, "apps", "appHere").toString());
     capabilities.put("platformName", "iOS");
     capabilities.put("automationName", "XCUITest");
@@ -61,20 +63,27 @@ public class Config {
     capabilities.put("xcodeSigningId", getProperty("xcodeSigningId", "iPhone Developer"));
   }
 
-  private void setAndroidCapabilites() {
-    setDeviceName(getProperty("deviceName", "emulator-5554"));
-    setCapabilities(getDeviceCapabilities(getDeviceName()));
+  // NOTE
+  /* use -> capabilities.put("app", Paths.get(WORKSPACE, "createAppFolderInProject", "appInFolderHere").toString()); <-
+  /* instead of [appPackage], [appActivity] you have an app to use */
+  private void setAndroidCapabilities() {
+    deviceName = getProperty("deviceName", "emulator-5554");
+    url = getProperty("seleniumGrid", "http://0.0.0.0:4723/wd/hub");
 
-    capabilities.put("app", Paths.get(WORKSPACE, "apps", "appHere").toString());
+    capabilities = getDeviceCapabilities(deviceName);
+    capabilities.put("appPackage", "com.google.android.apps.maps");
+    capabilities.put("appActivity", "com.google.android.maps.MapsActivity");
     capabilities.put("platformName", "Android");
     capabilities.put("automationName", "UiAutomator2");
     capabilities.put("systemPort", parseInt(getProperty("systemPort", "8200")));
     capabilities.put("autoGrantPermissions", true);
   }
 
-  private void setWebCapabilites() {
-    setDeviceName(getProperty("deviceName", "chrome"));
-    setCapabilities(getDeviceCapabilities(getDeviceName()));
+  private void setWebCapabilities() {
+    deviceName = getProperty("deviceName", "chrome");
+    url = getProperty("seleniumGrid", "http://0.0.0.0:4444/wd/hub");
+
+    capabilities = getDeviceCapabilities(deviceName);
   }
 
   private HashMap<String, Object> getDeviceCapabilities(String device) {
@@ -86,28 +95,12 @@ public class Config {
   }
 
   /** Get and Sets */
-  public String getDeviceName() {
-    return deviceName;
-  }
-
-  public void setDeviceName(String deviceName) {
-    this.deviceName = deviceName;
-  }
-
   public String getPlatform() {
     return platform;
   }
 
-  public void setPlatform(String platform) {
-    this.platform = platform;
-  }
-
   public Map<String, Object> getCapabilities() {
     return capabilities;
-  }
-
-  public void setCapabilities(Map<String, Object> capabilities) {
-    this.capabilities = capabilities;
   }
 
   public boolean isAndroid() {
@@ -124,6 +117,10 @@ public class Config {
 
   public boolean isMobile() {
     return isMobile;
+  }
+
+  public String getUrl() {
+    return url;
   }
   // @formatter:on
 }

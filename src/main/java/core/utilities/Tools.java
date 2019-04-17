@@ -15,15 +15,15 @@ public class Tools {
   public static String getRandomString(int size) {
     return generateRandom("QWERTYUIOPASDFGHJKLZXCVBNM", size);
   }
-  
+
   public static String getRandomInt(int size) {
     return generateRandom("123456789", size);
   }
-  
+
   public static String removeSpecialCharacters(String value) {
     return value.replaceAll("[^a-zA-Z]", "");
   }
-  
+
   private static String generateRandom(String characters, int count) {
     StringBuilder builder = new StringBuilder();
 
