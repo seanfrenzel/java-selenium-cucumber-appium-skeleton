@@ -12,15 +12,13 @@ import java.util.List;
 public class User {
   public String username;
   public String password;
-  public String name;
-  public String firstName;
-  public String initials;
-  public List<String> parentNames;
-  public Child child = new Child();
+  public String placeholderForOtherData;
+  public List<String> placeholderForListData;
+  public PlaceholderForChildClassData childClass = new PlaceholderForChildClassData();
 
-  public class Child {
-    public String childUsername;
-    public String childPassword;
+  public class PlaceholderForChildClassData {
+    public String childClassDataEX;
+    public String childClassDataEX2;
   }
 
   public User setUserData(String username) {
