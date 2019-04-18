@@ -70,7 +70,7 @@ NOTE: Unable to run iOS on windows\
 **Input command lines into powershell**\
 _restart pc if npm is not found_
 * `npm install npm@latest -g`
-* `npm i appium`
+* `npm install appium@latest -g`
 * `npm install selenium-standalone@latest -g`
 * `selenium-standalone install`
 
