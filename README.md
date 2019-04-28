@@ -208,16 +208,16 @@ Note: *iOS sim must have `connect hardware keyboard` off.*
      
 **Framework Workflow**
 ----  
-- **Config:** (_`core/utilities/setup/Config.java`_)
+- **Config:**
     - This is where we _**create the desired capabilities**_ for our devices based of the current platform. 
         - `getDeviceCapabilities()` deserializes _`jsonData/devices.json`_ JSON data
         
         
-- **Factory:** (_`core/utilities/setup/DriverFactory.java`_)
+- **Factory:**
     - We use the set _** capabilities**_ to _**create the driver**_ here
         - `createDriver()` will create the driver for the current platform     
      
-- **Hooks:** (_`core/utilities/setup/Hooks.java`_)
+- **Hooks:**
     - We use the _**created driver**_ from _**DriverFactory**_ to set the _**RemoteWebdriver**_ and perform actions based on test conditions. 
         - `beforeAll()` sets data, drivers, and variables for test run.
         - `beforeScenariol()` will set the driver from what was created in Factory. If that fails it will try again 5 times and until failing the run. 
@@ -225,7 +225,7 @@ Note: *iOS sim must have `connect hardware keyboard` off.*
         - `afterScenario()` The driver will be quit. On scenario failure a screenshot will be taken.
         
         
-- **PageObjectBase:** (_`core/base/PageObjectBase.java`_)
+- **PageObjectBase:**
     - This houses general use methods. The constructor sets the driver variable so this class can be used as a super. 
     - `getField(elementField)` Is how we use string parameters in gherkin steps to use elements on pages/modules
     
