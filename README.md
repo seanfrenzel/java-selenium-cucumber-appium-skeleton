@@ -38,6 +38,8 @@ This is what we will use to inspect the devices.
 
 Environment variables
 ---
+**We will use npm to install needed packages:**
+[install _current_ Node.js](https://nodejs.org/en/)
 
 #### Mac OSX:
 **1.** Open a terminal and proceed with the following:
@@ -64,8 +66,6 @@ export PATH=${PATH}:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/pla
     
 #### Windows OS:
 NOTE: Unable to run iOS on windows\
-**We will use npm to install needed packages:**
-[install _current_ Node.js](https://nodejs.org/en/)
 
 **Input command lines into powershell**\
 _restart pc if npm is not found_
