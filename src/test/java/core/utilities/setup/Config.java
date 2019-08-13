@@ -20,7 +20,7 @@ import static java.lang.System.getProperty;
 
 public class Config {
   public static final String WORKSPACE = getProperty("user.dir");
-  public static final String ENVIRONMENT = getProperty("environment", "https://gfycat.com/");
+  public static String env = getProperty("env", "https://gfycat.com/");
   public static final String USER = getProperty("user", "user1");
 
   private String platform;
@@ -94,8 +94,10 @@ public class Config {
     return new Gson().fromJson(jsonElement, hashType);
   }
 
-  /** Get and Sets */
-  public String getPlatform() {
+  //////////////////
+  // Get and Sets //
+  //////////////////
+  String getPlatform() {
     return platform;
   }
 
@@ -122,5 +124,20 @@ public class Config {
   public String getUrl() {
     return url;
   }
-  // @formatter:on
+
+  public static String getEnv() {
+    return env;
+  }
+
+  public static void setEnv(String env) {
+    Config.env = env;
+  }
+
+  String getDeviceName() {
+    return deviceName;
+  }
+
+  public void setDeviceName(String deviceName) {
+    this.deviceName = deviceName;
+  }
 }

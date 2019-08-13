@@ -27,7 +27,7 @@ public class ExamplePageWeb extends ExamplePage {
   }
 
   public void assertPagePresent() {
-    assertDisplayed(logo);
+    assertDisplayed(logo, 5);
   }
 
   public void openNeatGif() {

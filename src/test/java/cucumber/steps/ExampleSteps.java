@@ -31,7 +31,7 @@ public class ExampleSteps {
 
   @Then("verifies {string} is displayed")
   public void verifirezIsDisplayed(String elementField) {
-    page.assertDisplayed(page.getElement(elementField));
+    page.assertDisplayed(page.getElement(elementField), 5);
   }
 
   @And("taps {string}")

@@ -17,7 +17,7 @@ public class ExamplePageAndroid extends ExamplePage {
 
   @Override
   public void assertPagePresent() {
-    assertDisplayed(skip);
+    assertDisplayed(skip, 5);
   }
 
   @Override
