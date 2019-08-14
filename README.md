@@ -219,10 +219,8 @@ Note: *iOS sim must have `connect hardware keyboard` off.*
      
 - **Hooks:**
     - We use the _**created driver**_ from _**DriverFactory**_ to set the _**RemoteWebdriver**_ and perform actions based on test conditions. 
-        - `beforeAll()` sets data, drivers, and variables for test run.
-        - `beforeScenariol()` will set the driver from what was created in Factory. If that fails it will try again 5 times and until failing the run. 
-        - `afterAll()` Setup will be set to false after all tests ran
-        - `afterScenario()` The driver will be quit. On scenario failure a screenshot will be taken.
+        - `beforeAll()` sets and created data, drivers, and variables for test run.
+        - `afterAll()` Setup will be set to false after all tests ran. The driver will be quit. On scenario failure a screenshot will be taken.
         
         
 - **PageObjectBase:**
